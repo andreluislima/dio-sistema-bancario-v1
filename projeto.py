@@ -5,6 +5,7 @@ saldo += deposito
 saque = 0.0
 real = "R$ "
 dolar = "$ "
+tentativas = 0
 
 msg_boas_vindas = "\nBem-Vindo ao Banco SantANDRÉ.\n>>O SEU banco<<"
 msg_menu = "Acesse o menu e escolha o que você irá fazer"
@@ -38,16 +39,25 @@ while True:
             print("Depósito realizdo com sucesso!")
             print(f'\nSeu saldo atual é: {real}{saldo:.2f}')
             print(menu + aviso)
-            
+
     elif(opcao == 2):
         print("\nVocê selecionou a opção: 2 -> Saque")
-        print("\n### SAQUE ###")
-        saque = float(input("Informe a quantia que deseja sacar: "))
-        if(saque > saldo):
-            print(f"\nSaldo insuficiente! Você tentou sacar {real}{saque:.2f}, mas seu saldo é {real}{saldo:.2f}")
+        print("\n### SAQUE ###")    
+            
+        for tentativas in range(3):
+
+            saque = float(input("Informe a quantia que deseja sacar: "))
+            if(saque > saldo):
+                print(f"\nSaldo insuficiente! Você tentou sacar {real}{saque:.2f}, mas seu saldo é {real}{saldo:.2f}")
+            elif(saque >500):
+                print(f'\nLimite do saque excedido! Você tentou sacar {real}{saque:.2f}, mas o permitido é no máximo {real}500,00')
+            else:
+                saldo -= saque
+                print(f'\nSaque realizado com sucesso!\nSeu saldo atual é: {real}{saldo:.2f}')
+                print(f'\nNúmero de saques: {tentativas + 1}')
+                print(menu + aviso)
         else:
-            saldo -= saque
-            print(f'\nSaque realizado com sucesso!\nSeu saldo atual é: {real}{saldo:.2f}')
+            print("\nVocê execedeu o limite diário de saques que é de 3 por dia")
             print(menu + aviso)
 
     elif(opcao == 3):
