@@ -37,14 +37,14 @@ por falta de saldo.
 - [x] Depósito
 - [x] Saque
 - [x] Extrato 
-- [x]  
+- [x] Avaliação do Sistema
 
 --
 
 ## 📞 Contato
 
 André Lima - andreluislima@gmail.com  
-[LinkedIn](https://www.linkedin.com/in/andreluislima) | [GitHub](https://github.com/andreluislima)
+[LinkedIn](https://www.linkedin.com/in/andreluislima89) | [GitHub](https://github.com/andreluislima)
 
 ---
 
