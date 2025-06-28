@@ -82,4 +82,3 @@ while True:
 
     else:
         opcao = int(input ("Selecione uma opção válida para o menu: "))
-
